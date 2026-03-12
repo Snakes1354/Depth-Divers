@@ -8,6 +8,7 @@ public class PlayerStats : MonoBehaviour
    public float MaxHealth => maxHealth;
    public float CurrentHealth => currentHealth;
    public HealthBar healthBar;
+   
    private void Start()
    {
        currentHealth = maxHealth;

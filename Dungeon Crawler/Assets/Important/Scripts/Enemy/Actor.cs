@@ -4,23 +4,25 @@ using System.Collections.Generic;
 
 public class Actor : MonoBehaviour
 {
-    public int currentHealth;
-    public int maxHealth;
+
+    public int CurrentHealth = 2;
+    public int MaxHealth = 3;
 
     void Awake()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = MaxHealth;
         // Sets hp at the start.
     }
 
     public void TakeDamage(int amount)
     {
-        currentHealth -= amount;
+        CurrentHealth -= amount;
         // Makes it take damage.
 
-        if(currentHealth <= 0)
+        if(CurrentHealth <= 0)
         {
             Death();
+            ExpManager.Instance.AddExperience(5);
             // Call Death method when it hits 0 hp.
         }
     }

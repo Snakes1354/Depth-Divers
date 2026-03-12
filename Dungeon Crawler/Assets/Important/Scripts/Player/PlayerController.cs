@@ -12,9 +12,8 @@ public class PlayerController : MonoBehaviour
    Animator animator;
    AudioSource audioSource;
  
-   [Header("Controller")]
-   public float movespeed = 5;
-   public float gravity = 9.8f;
+   [Header("Movement")]
+   public float gravity = -9.8f;
    public float JumpHeight = 1.2f;
    // Player Settings.
  
@@ -29,8 +28,6 @@ public class PlayerController : MonoBehaviour
    [Header("Attacking")]
    public float attackDistance = 3f;
    public float attackDelay = 0.4f;
-   public float attackSpeed = 1f;
-   public int attackDamage = 1;
    public LayerMask attackLayer;
  
    public GameObject hitEffect;
@@ -89,7 +86,7 @@ public class PlayerController : MonoBehaviour
         moveDirection.x = input.x;
         moveDirection.z = input.y;
  
-        controller.Move(transform.TransformDirection(moveDirection) * movespeed * Time.deltaTime);
+        controller.Move(transform.TransformDirection(moveDirection) * StatManager.Instance.MovementSpeed * Time.deltaTime);
         _PlayerVelocity.y += gravity * Time.deltaTime;
         if(isGrounded && _PlayerVelocity.y < 0)
         _PlayerVelocity.y = -2f;
@@ -137,7 +134,7 @@ public class PlayerController : MonoBehaviour
         readyToAttack = false;
         attacking = true;
  
-        Invoke(nameof(ResetAttack), attackSpeed);
+        Invoke(nameof(ResetAttack), StatManager.Instance.attackSpeed);
         Invoke(nameof(AttackRaycast), attackDelay);
         // Resets the attack.
  
@@ -172,8 +169,7 @@ public class PlayerController : MonoBehaviour
  
             if(hit.transform.TryGetComponent<Actor>(out Actor T))
             {
-                T.TakeDamage(attackDamage);
-                Debug.Log("Deal Damage");
+                T.TakeDamage(StatManager.Instance.attackDamage);
                 // Calls the Take damage method from the actor script.
             }
         }
