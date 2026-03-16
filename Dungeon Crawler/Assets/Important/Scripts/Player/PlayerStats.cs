@@ -19,11 +19,6 @@ public class PlayerStats : MonoBehaviour
    }
    private void Update()
    {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) // Press 1 to take 10 damage
-        {
-            TakeDamage(10f);
-        }
-
        if (currentHealth > maxHealth)
            currentHealth = maxHealth;
        if (currentHealth <= 0)
