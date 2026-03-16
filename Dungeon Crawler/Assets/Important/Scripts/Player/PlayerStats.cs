@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
+
+   public static StatManager Instance;
+    
    public float maxHealth = 100f;
    public float currentHealth;
    public float MaxHealth => maxHealth;
