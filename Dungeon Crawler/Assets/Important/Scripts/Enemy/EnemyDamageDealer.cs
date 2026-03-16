@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections;
+using System.Collections.Generic;
 
 public class EnemyDamageDealer : MonoBehaviour
 {
@@ -25,9 +25,9 @@ public class EnemyDamageDealer : MonoBehaviour
             int layerMask = 1 << 8;
             if(Physics.Raycast(transform.position, -transform.up, out hit, weaponLength, layerMask))
             {
-                if (hit.transform.TryGetComponent(PlayerStats,Instance.CurrentHealth))
+                if (hit.transform.CompareTag("Player"))
                 {
-                    currentHealth.TakeDamage(weaponDamage);
+                    PlayerStats.Instance.TakeDamage(weaponDamage);
                     hasDealtDamage = true;
                 }
             }

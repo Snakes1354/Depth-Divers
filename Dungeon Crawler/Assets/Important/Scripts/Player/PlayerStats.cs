@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class PlayerStats : MonoBehaviour
 {
 
-   public static StatManager Instance;
+   public static PlayerStats Instance;
     
    public float maxHealth = 100f;
    public float currentHealth;
@@ -19,6 +19,11 @@ public class PlayerStats : MonoBehaviour
    }
    private void Update()
    {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) // Press 1 to take 10 damage
+        {
+            TakeDamage(10f);
+        }
+
        if (currentHealth > maxHealth)
            currentHealth = maxHealth;
        if (currentHealth <= 0)
@@ -36,8 +41,16 @@ public class PlayerStats : MonoBehaviour
    }
    private void Die()
    {
-         UnityEngine.SceneManagement.SceneManager.LoadScene("End Menu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("End Menu");
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+   }
+
+   private void Awake()
+   {
+        if(Instance == null)
+        Instance = this;
+        else
+        Destroy(gameObject);
    }
 }

@@ -12,22 +12,20 @@ public class ExpManager : MonoBehaviour
     [Header("Experience")]
     [SerializeField] AnimationCurve experienceCurve;
 
-    public int currentLevel, totalExperience;
-    public int previousLevelsExperience, nextLevelsExperience;
+    public int currentLevel;
+    public int totalExperience;
+    public int previousLevelsExperience;
+    public int nextLevelsExperience;
 
     [Header("Interface")]
     [SerializeField] TextMeshProUGUI LevelText;
     [SerializeField] TextMeshProUGUI experienceText;
     [SerializeField] Image experienceFill;
+    [SerializeField] Slider experienceSlider;
 
     private void Start()
     {
         UpdateLevel();
-    }
-
-    public void Update()
-    {
-
     }
 
     public void AddExperience(int amount)
@@ -58,9 +56,10 @@ public class ExpManager : MonoBehaviour
         int start = totalExperience - previousLevelsExperience;
         int end = nextLevelsExperience - previousLevelsExperience;
 
-        LevelText.text = currentLevel.ToString();
-        experienceText.text = start + " exp / " + end + " exp";
-        experienceFill.fillAmount = (float)start / (float)end;
+       LevelText.text = currentLevel.ToString();
+       experienceText.text = start + " exp / " + end + " exp";
+       experienceSlider.maxValue = end;
+       experienceSlider.value = start;
     }
     
     private void Awake()

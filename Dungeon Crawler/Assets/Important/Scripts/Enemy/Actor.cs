@@ -19,7 +19,7 @@ public class Actor : MonoBehaviour
     public int CurrentHealth = 2;
     public int MaxHealth = 3;
 
-    void start()
+    void Start()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
