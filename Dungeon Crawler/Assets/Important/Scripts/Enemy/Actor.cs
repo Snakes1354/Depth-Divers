@@ -46,7 +46,7 @@ public class Actor : MonoBehaviour
             agent.SetDestination(player.transform.position);
         }
         newDestinationCD -= Time.deltaTime;
-        transform.LookAt(player.transform);
+        //transform.LookAt(player.transform);
     }
     
 

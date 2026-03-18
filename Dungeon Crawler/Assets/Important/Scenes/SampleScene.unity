@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -9.8
-  JumpHeight: 1.2
+  JumpHeight: 1
   cam: {fileID: 330585545}
   sensitivity: 15
   attackDistance: 3
@@ -2786,8 +2786,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.021133, y: 5.6345596, z: 2.5128694}
-  m_Center: {x: -0.018721372, y: 2.8117685, z: 0.15112492}
+  m_Size: {x: 1.6410333, y: 4.750786, z: 2.5128696}
+  m_Center: {x: 0.17132893, y: 2.3698807, z: 0.1511249}
 --- !u!195 &1604695498
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3943,7 +3943,7 @@ Transform:
   m_GameObject: {fileID: 919132147668651232}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.58577, y: 0.1, z: 3.8436}
+  m_LocalPosition: {x: 0.58577, y: -0, z: 3.8436}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7599,7 +7599,7 @@ Transform:
   m_GameObject: {fileID: 4927555418169067149}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.0036313795, y: 2.3405519, z: 0}
+  m_LocalPosition: {x: 0.0036313795, y: 2.03, z: 0}
   m_LocalScale: {x: 273.66827, y: 273.66827, z: 273.66827}
   m_ConstrainProportionsScale: 1
   m_Children: []
