@@ -15,12 +15,16 @@ public class StatsUI : MonoBehaviour
         if(Input.GetButtonDown("ToggleStats"))
         if(statsOpen)
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
             statsCanvas.alpha = 0;
             statsOpen = false;
         }
         else
         {
+            Cursor.visible = true; 
+            Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             statsCanvas.alpha = 1;
             statsOpen = true;
