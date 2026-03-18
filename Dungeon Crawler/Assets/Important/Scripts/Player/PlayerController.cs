@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
  
             if(hit.transform.TryGetComponent<Actor>(out Actor T))
             {
-                T.TakeDamage(StatManager.Instance.attackDamage);
+                T.TakeDamage(StatManager.Instance.damage);
                 // Calls the Take damage method from the actor script.
             }
         }

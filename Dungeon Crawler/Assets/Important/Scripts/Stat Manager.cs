@@ -5,7 +5,7 @@ public class StatManager : MonoBehaviour
     public static StatManager Instance;
 
     [Header("Combat Stats")]
-    public int attackDamage;
+    public int damage;
     public float attackSpeed;
 
     [Header("Movement Stats")]
