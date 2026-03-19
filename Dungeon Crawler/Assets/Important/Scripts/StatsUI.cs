@@ -5,10 +5,12 @@ using TMPro;
 
 public class StatsUI : MonoBehaviour
 {
+
    public GameObject[] statsSlots;
    public CanvasGroup statsCanvas;
 
-   private bool statsOpen = false;
+    private bool statsOpen = false;
+    public static int Points;
 
     private void Update()
     {
@@ -46,12 +48,12 @@ public class StatsUI : MonoBehaviour
 
    public void Updatehealth()
    {
-        statsSlots[2].GetComponentInChildren<TMP_Text>().text = "Health: " + StatManager.Instance.MaxHealth;
+        statsSlots[2].GetComponentInChildren<TMP_Text>().text = "MaxHealth: " + StatManager.Instance.MaxHealth;
    }
 
    public void Updatepoints()
    {
-        statsSlots[3].GetComponentInChildren<TMP_Text>().text = "Points: " + StatManager.Instance.points;
+        statsSlots[3].GetComponentInChildren<TMP_Text>().text = "Points: " + Points;
    }
 
    public void UpdateAllStats()
@@ -61,4 +63,5 @@ public class StatsUI : MonoBehaviour
         Updatehealth();
         Updatepoints();
    }
+
 }

@@ -15,8 +15,6 @@ public class StatManager : MonoBehaviour
     public int MaxHealth;
     public int CurrentHealth;
 
-    public int points;
-
     private void Awake()
     {
         if(Instance == null)

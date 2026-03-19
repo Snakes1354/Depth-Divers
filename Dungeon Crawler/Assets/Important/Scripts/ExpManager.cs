@@ -26,6 +26,7 @@ public class ExpManager : MonoBehaviour
     private void Start()
     {
         UpdateLevel();
+        StatsUI.Points -= 3;
     }
 
     public void AddExperience(int amount)
@@ -48,6 +49,7 @@ public class ExpManager : MonoBehaviour
     {
         previousLevelsExperience = (int)experienceCurve.Evaluate(currentLevel);
         nextLevelsExperience = (int)experienceCurve.Evaluate(currentLevel + 1);
+        StatsUI.Points += 3;
         UpdateInterface();
     }
 

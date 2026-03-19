@@ -4,48 +4,46 @@ using System.Collections.Generic;
 
 public class EnemyDamageDealer : MonoBehaviour
 {
-    bool canDealDamage;
-    bool hasDealtDamage;
+    // bool canDealDamage;
+    // bool hasDealtDamage;
 
-    [SerializeField] float weaponLength;
+    // [SerializeField] float weaponLength;
     [SerializeField] float weaponDamage;
+    public static bool isAttacked = false;
 
-    void Start()
-    {
-        canDealDamage = false;
-        hasDealtDamage = false;
-    }
+    // void Start()
+    // {
+    //     canDealDamage = false;
+    //     hasDealtDamage = false;
+    // }
 
-    void Update()
+    void OnTriggerEnter(Collider collision)
     {
-        if(canDealDamage && !hasDealtDamage)
+        if (collision.CompareTag("Player"))
         {
-            RaycastHit hit;
-
-            int layerMask = 1 << 8;
-            if(Physics.Raycast(transform.position, -transform.up, out hit, weaponLength, layerMask))
-            {
-                if (hit.transform.CompareTag("Player"))
-                {
-                    PlayerStats.Instance.TakeDamage(weaponDamage);
-                    hasDealtDamage = true;
-                }
-            }
+           if (!isAttacked)
+           {
+                isAttacked = true;
+                PlayerStats.Instance.TakeDamage(weaponDamage);
+                Debug.Log("Help");
+           }
         }
     }
-    public void StartDealDamage()
-    {
-        canDealDamage = true;
-        hasDealtDamage = false;
-    }
-    public void EndDealDamage()
-    {
-        canDealDamage = false;
-    }
+    
+    // public void StartDealDamage()
+    // {
+    //     canDealDamage = true;
+    //     hasDealtDamage = false;
+    //     Debug.Log("Enemy Dealt damage");
+    // }
+    // public void EndDealDamage()
+    // {
+    //     canDealDamage = false;
+    // }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, transform.position - transform.up * weaponLength);
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.yellow;
+    //     Gizmos.DrawLine(transform.position, transform.position - transform.up * weaponLength);
+    // }
 }

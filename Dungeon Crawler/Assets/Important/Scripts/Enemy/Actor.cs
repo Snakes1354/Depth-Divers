@@ -76,15 +76,15 @@ public class Actor : MonoBehaviour
         // Temporary: Destroy Object
     }
 
-    public void StartDealDamage()
-    {
-        GetComponentInChildren<EnemyDamageDealer>().StartDealDamage();
-    }
+    // public void StartDealDamage()
+    // {
+    //     GetComponentInChildren<EnemyDamageDealer>().StartDealDamage();
+    // }
 
-    public void EndDealDamage()
-    {
-        GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
-    }
+    // public void EndDealDamage()
+    // {
+    //     GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
+    // }
     
     private void OnDrawGizmos()
     {
