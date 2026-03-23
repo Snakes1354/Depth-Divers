@@ -24,7 +24,8 @@ public class UpgradeStat : MonoBehaviour
     {
         if (StatsUI.Points >= 1)
         {
-            StatManager.Instance.MaxHealth += 10;
+            PlayerStats.Instance.maxHealth += 10;
+            PlayerStats.Instance.currentHealth += 10;
             StatsUI.Points -= 1;
         }
     }

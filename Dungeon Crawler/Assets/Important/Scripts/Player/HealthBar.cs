@@ -25,7 +25,6 @@ public class HealthBar : MonoBehaviour
    }
    private void UpdateHealthText()
    {
-        healthText.text = 
-        playerStats.CurrentHealth + " / " + playerStats.MaxHealth;
+        healthText.text = playerStats.currentHealth + " / " + playerStats.maxHealth;
    }
 }

@@ -11,9 +11,6 @@ public class StatManager : MonoBehaviour
     [Header("Movement Stats")]
     public float MovementSpeed;
 
-    [Header("Health Stats")]
-    public int MaxHealth;
-    public int CurrentHealth;
 
     private void Awake()
     {

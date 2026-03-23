@@ -48,7 +48,7 @@ public class StatsUI : MonoBehaviour
 
    public void Updatehealth()
    {
-        statsSlots[2].GetComponentInChildren<TMP_Text>().text = "MaxHealth: " + StatManager.Instance.MaxHealth;
+        statsSlots[2].GetComponentInChildren<TMP_Text>().text = "MaxHealth: " + PlayerStats.Instance.maxHealth;
    }
 
    public void Updatepoints()
