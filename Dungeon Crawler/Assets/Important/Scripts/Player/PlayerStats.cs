@@ -29,7 +29,6 @@ public class PlayerStats : MonoBehaviour
        currentHealth -= amount;
        Debug.Log(currentHealth);
        healthBar.SetSlider(currentHealth);
-       EnemyDamageDealer.isAttacked = false;
    }
    public void HealPlayer(float amount)
    {

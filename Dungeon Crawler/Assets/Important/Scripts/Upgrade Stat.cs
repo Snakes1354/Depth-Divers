@@ -26,6 +26,8 @@ public class UpgradeStat : MonoBehaviour
         {
             PlayerStats.Instance.maxHealth += 10;
             PlayerStats.Instance.currentHealth += 10;
+            PlayerStats.Instance.healthBar.SetSliderMax(PlayerStats.Instance.maxHealth);
+            PlayerStats.Instance.healthBar.SetSlider(PlayerStats.Instance.currentHealth);
             StatsUI.Points -= 1;
         }
     }

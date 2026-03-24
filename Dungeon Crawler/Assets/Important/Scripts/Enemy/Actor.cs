@@ -34,6 +34,7 @@ public class Actor : MonoBehaviour
         {
             if (Vector3.Distance(player.transform.position, transform.position) <= aggroRange)
             {
+                transform.LookAt(player.transform.position);
                 animator.SetTrigger("attack");
                 timePassed = 0;
             }
