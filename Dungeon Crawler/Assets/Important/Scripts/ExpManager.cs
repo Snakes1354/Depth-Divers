@@ -71,6 +71,4 @@ public class ExpManager : MonoBehaviour
         else
         Destroy(gameObject);
     }
-
-
 }
