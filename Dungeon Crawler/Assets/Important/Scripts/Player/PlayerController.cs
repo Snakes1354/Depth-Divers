@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    PlayerInput playerInput;
-    PlayerInput.MainActions input;
+    public PlayerInput playerInput;
+    public PlayerInput.MainActions input;
 
     CharacterController characterController;
     [SerializeField] Animator anim;
