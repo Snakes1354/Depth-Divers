@@ -3434,6 +3434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promptMessage: Press E
   chestui: {fileID: 1842462168}
+  ChestCanvas: {fileID: 0}
 --- !u!65 &1657141894
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3999,14 +4000,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  currentLevel: 0
-  totalExperience: 0
-  previousLevelsExperience: 0
-  nextLevelsExperience: 0
   LevelText: {fileID: 166813859}
   experienceText: {fileID: 198980029}
   experienceFill: {fileID: 57256101}
   experienceSlider: {fileID: 1151274076}
+  currentLevel: 0
+  totalExperience: 0
+  previousLevelsExperience: 0
+  nextLevelsExperience: 0
 --- !u!1 &1775377867
 GameObject:
   m_ObjectHideFlags: 0
@@ -4055,13 +4056,14 @@ GameObject:
   - component: {fileID: 1842462171}
   - component: {fileID: 1842462170}
   - component: {fileID: 1842462169}
+  - component: {fileID: 1842462173}
   m_Layer: 5
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1842462169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4150,6 +4152,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &1842462173
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842462168}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1900236951 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3990733323182761253, guid: 4a1afc0b044260149b660b75369b3084, type: 3}

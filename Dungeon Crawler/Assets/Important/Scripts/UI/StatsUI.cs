@@ -21,7 +21,7 @@ public class StatsUI : MonoBehaviour
             Cursor.visible = false; // Sets my cursor visiblity to false
             Cursor.lockState = CursorLockMode.Locked; // This locks my cursor
             Time.timeScale = 1; // Pauses the time in the game
-            statsCanvas.alpha = 0; 
+            statsCanvas.alpha = 0; // Makes the canvas invisible
             statsOpen = false; // Sets the statsopen bool to false
         }
         else
@@ -29,7 +29,7 @@ public class StatsUI : MonoBehaviour
             Cursor.visible = true; // Sets my cursor visiblity to true
             Cursor.lockState = CursorLockMode.None; // This Unlocks my cursor
             Time.timeScale = 0; // This unpauses the time in the game
-            statsCanvas.alpha = 1;
+            statsCanvas.alpha = 1; // Makes the canvas seeable
             statsOpen = true; // Sets the statsopen bool to true
         }
 
