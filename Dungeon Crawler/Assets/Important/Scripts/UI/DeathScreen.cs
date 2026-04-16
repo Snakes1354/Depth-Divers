@@ -5,7 +5,7 @@ public class DeathScreen : MonoBehaviour
 {
     public void LoadScene(string SceneName)
     {
-        SceneManager.LoadScene(SceneName);
+        SceneManager.LoadScene(SceneName); // Makes it so you can change scene
     }
 
 }

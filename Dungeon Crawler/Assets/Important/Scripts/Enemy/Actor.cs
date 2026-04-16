@@ -6,36 +6,37 @@ using UnityEngine.AI;
 public class Actor : MonoBehaviour
 {
 
-    [SerializeField] float attackCD = 3f;
-    [SerializeField] float attackRange = 1f;
-    [SerializeField] float aggroRange = 4f;
+    // VARIABLES
+    [SerializeField] private float attackCD = 3f;
+    [SerializeField] private float attackRange = 1f;
+    [SerializeField] private float aggroRange = 4f;
+    [SerializeField] private int CurrentHealth = 2;
+    [SerializeField] private int MaxHealth = 3;
+    private float timePassed;
+    private float newDestinationCD = 0.5f;
 
+    [Header("Assign in inspector")]
     NavMeshAgent agent;
     Animator animator;
     GameObject player;
 
-    float timePassed;
-    float newDestinationCD = 0.5f;
-    public int CurrentHealth = 2;
-    public int MaxHealth = 3;
-
-    void Start()
+    private void Start()
     {
-        animator = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>();
-        player = GameObject.FindWithTag("Player");
+        animator = GetComponent<Animator>(); // Finds where the animator component is
+        agent = GetComponent<NavMeshAgent>(); // Finds where the agent component is
+        player = GameObject.FindWithTag("Player"); // Find where the gameobject player with the tag player is
     }
 
-    void Update()
+    private void Update()
     {
-        animator.SetFloat("speed", agent.velocity.magnitude / agent.speed);
+        animator.SetFloat("speed", agent.velocity.magnitude / agent.speed); // Enables the float speed in the animator controller
         
-        if(timePassed >= attackCD)
+        if(timePassed >= attackCD) // Checks if the cooldown is over
         {
             if (Vector3.Distance(player.transform.position, transform.position) <= aggroRange)
             {
-                transform.LookAt(player.transform.position);
-                animator.SetTrigger("attack");
+                transform.LookAt(player.transform.position); // Looks at the player
+                animator.SetTrigger("attack"); // Changes the animaton to attack
                 timePassed = 0;
             }
         }
@@ -76,16 +77,6 @@ public class Actor : MonoBehaviour
         // Death function
         // Temporary: Destroy Object
     }
-
-    // public void StartDealDamage()
-    // {
-    //     GetComponentInChildren<EnemyDamageDealer>().StartDealDamage();
-    // }
-
-    // public void EndDealDamage()
-    // {
-    //     GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
-    // }
     
     private void OnDrawGizmos()
     {
