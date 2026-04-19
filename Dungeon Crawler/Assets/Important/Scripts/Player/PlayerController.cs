@@ -71,11 +71,6 @@ public class PlayerController : MonoBehaviour
             dodge_coolDown -= Time.deltaTime;
     }
 
-    void FixedUpdate()
-    {
-       
-    }
-
     void LateUpdate()
     {
         LookInput(input.Look.ReadValue<Vector2>());
@@ -169,6 +164,11 @@ public class PlayerController : MonoBehaviour
             if (hit.transform.TryGetComponent<Actor>(out Actor T))
             {
                 T.TakeDamage(StatManager.Instance.damage);
+            }
+
+            if (hit.transform.TryGetComponent<Tutorial>(out Tutorial tutorial))
+            {
+                tutorial.TakeDamage(StatManager.Instance.damage);
             }
         }
     }
