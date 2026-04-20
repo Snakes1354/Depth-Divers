@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
     {
         input.Jump.performed += ctx => Jump();
         input.Attack.started += ctx => Attack();
-        input.Dodge.performed += ctx => StartCoroutine(Dodge());
+        //input.Dodge.performed += ctx => StartCoroutine(Dodge());
     }
 
     void MoveInput(Vector2 inputVec)
