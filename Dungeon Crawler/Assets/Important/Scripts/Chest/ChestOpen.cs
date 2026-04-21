@@ -17,7 +17,7 @@ public class ChestOpen : Interactable
 
     private void Update()
     {
-        if(isOpen && Input.GetKeyDown(KeyCode.Escape))
+        if (isOpen && Input.GetKeyDown(KeyCode.Escape))
         {
             CloseChest();
         }
@@ -25,7 +25,7 @@ public class ChestOpen : Interactable
 
     protected override void Interact()
     {
-        if(OpenOnce) return;
+        if (OpenOnce) return;
 
         chestui.SetActive(true);
         Cursor.visible = true; 
