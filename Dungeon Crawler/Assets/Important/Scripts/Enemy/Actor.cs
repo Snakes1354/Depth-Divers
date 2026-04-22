@@ -13,13 +13,16 @@ public class Actor : MonoBehaviour
     [SerializeField] private int CurrentHealth = 2;
     [SerializeField] private int MaxHealth = 3;
     [SerializeField] private int ExpAmount;
+    public float DropChance = 1;
+
     private float timePassed;
     private float newDestinationCD = 0.5f;
 
     [Header("Assign in inspector")]
-    NavMeshAgent agent;
-    Animator animator;
-    GameObject player;
+    public GameObject Chest;
+    public NavMeshAgent agent;
+    public Animator animator;
+    public GameObject player;
 
     private void Start()
     {
@@ -74,12 +77,27 @@ public class Actor : MonoBehaviour
 
     void Death()
     {
-        Destroy(gameObject);
         KillManager.PrintEnemyCount();
-        // Death function
-        // Temporary: Destroy Object
+
+        if (Random.value <= DropChance)
+        {
+
+        
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position + Vector3.up * 2f, Vector3.down, out hit, 10f))
+            {
+                Instantiate(Chest, hit.point + Vector3.down * 0.7f, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(Chest, transform.position, Quaternion.identity);
+            }
+        }
+
+        Destroy(gameObject);
     }
-    
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

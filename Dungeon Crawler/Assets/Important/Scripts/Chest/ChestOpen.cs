@@ -7,13 +7,18 @@ public class ChestOpen : Interactable
     // I used a static so that my ChestOpen can be accessed from other scripts.
 
     public GameObject chestui;
-    public CanvasGroup ChestCanvas;
+    [SerializeField] private CanvasGroup ChestCanvas;
 
     private bool isOpen;
     private bool OpenOnce;
     public float initialHealth;
     public float initialSpeed;
     public int initialDamage;
+
+    public void Start()
+    {
+        ChestCanvas = GameObject.Find("ChestCanvas").GetComponent<CanvasGroup>();
+    }
 
     private void Update()
     {
@@ -53,19 +58,19 @@ public class ChestOpen : Interactable
     public void SpeedBuff()
     {
         StartCoroutine(SpeedTime());
-        CloseChest();
+        
     }
 
     public void DamageBuff()
     {
         StartCoroutine(DamageTime());
-        CloseChest();
+       
     }
 
     public void HealthBuff()
     {
         StartCoroutine(HealthTime());
-        CloseChest();
+       
     }
 
     public IEnumerator SpeedTime()
