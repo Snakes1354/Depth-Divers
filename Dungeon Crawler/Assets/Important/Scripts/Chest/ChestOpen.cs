@@ -18,6 +18,7 @@ public class ChestOpen : Interactable
     public void Start()
     {
         ChestCanvas = GameObject.Find("ChestCanvas").GetComponent<CanvasGroup>();
+        chestui.SetActive(true);
     }
 
     private void Update()
@@ -45,7 +46,7 @@ public class ChestOpen : Interactable
 
     private void CloseChest()
     {
-        chestui.SetActive(false);
+        gameObject.SetActive(false);
         Cursor.visible = false; 
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -58,19 +59,19 @@ public class ChestOpen : Interactable
     public void SpeedBuff()
     {
         StartCoroutine(SpeedTime());
-        
+        CloseChest();
     }
 
     public void DamageBuff()
     {
         StartCoroutine(DamageTime());
-       
+        CloseChest();
     }
 
     public void HealthBuff()
     {
         StartCoroutine(HealthTime());
-       
+        CloseChest();
     }
 
     public IEnumerator SpeedTime()
@@ -113,12 +114,12 @@ public class ChestOpen : Interactable
         PlayerStats.Instance.healthBar.SetSlider(PlayerStats.Instance.currentHealth); // Updates the currenthealth variable from the playerstats script
     }
 
-    private void Awake()
-    {
-        if(Instance == null)
-        Instance = this;
-        else
-        Destroy(gameObject); // Destroys the gameobject
+   // private void Awake()
+    //{
+        //if(Instance == null)
+        //Instance = this;
+        //else
+        //Destroy(gameObject); // Destroys the gameobject
         // Makes it so that there can't be more than one StatManager in my game.
-    }
+   // }
 }

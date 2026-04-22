@@ -81,13 +81,12 @@ public class Actor : MonoBehaviour
 
         if (Random.value <= DropChance)
         {
-
-        
             RaycastHit hit;
 
             if (Physics.Raycast(transform.position + Vector3.up * 2f, Vector3.down, out hit, 10f))
             {
-                Instantiate(Chest, hit.point + Vector3.down * 0.7f, Quaternion.identity);
+                GameObject newchest = Instantiate(Chest, hit.point + Vector3.down * 0.7f, Quaternion.identity);
+                newchest.SetActive(true);
             }
             else
             {
