@@ -12,6 +12,7 @@ public class Actor : MonoBehaviour
     [SerializeField] private float aggroRange = 4f;
     [SerializeField] private int CurrentHealth = 2;
     [SerializeField] private int MaxHealth = 3;
+    [SerializeField] private int ExpAmount;
     private float timePassed;
     private float newDestinationCD = 0.5f;
 
@@ -66,7 +67,7 @@ public class Actor : MonoBehaviour
         if(CurrentHealth <= 0)
         {
             Death();
-            ExpManager.Instance.AddExperience(5);
+            ExpManager.Instance.AddExperience(ExpAmount);
             // Call Death method when it hits 0 hp.
         }
     }
@@ -74,6 +75,7 @@ public class Actor : MonoBehaviour
     void Death()
     {
         Destroy(gameObject);
+        KillManager.PrintEnemyCount();
         // Death function
         // Temporary: Destroy Object
     }

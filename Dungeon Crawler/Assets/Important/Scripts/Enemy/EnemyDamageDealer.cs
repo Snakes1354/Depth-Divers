@@ -12,7 +12,7 @@ public class EnemyDamageDealer : MonoBehaviour
 
         if (Time.time < nextHitTime) return;
 
-        nextHitTime = Time.time + 1f; 
+        nextHitTime = Time.time + 2f; 
         PlayerStats.Instance.TakeDamage(weaponDamage);
     }
 }

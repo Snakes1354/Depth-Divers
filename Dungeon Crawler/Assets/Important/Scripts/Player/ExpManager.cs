@@ -32,6 +32,11 @@ public class ExpManager : MonoBehaviour
         StatsUI.Points -= 3; // Calls my other script called statsui and takes 3 points away
     }
 
+    private void FixedUpdate()
+    {
+       CheckForLevelUp(); 
+    }
+
     public void AddExperience(int amount)
     {
         totalExperience += amount; // adds totalexperience + amount

@@ -22,6 +22,7 @@ public class Tutorial : MonoBehaviour
         if(CurrentHealthTu <= 0)
         {
             Death();
+            KillManager.PrintEnemyCount();
             // Call Death method when it hits 0 hp.
         }
     }
