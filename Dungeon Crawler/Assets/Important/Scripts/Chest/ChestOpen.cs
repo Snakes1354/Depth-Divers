@@ -3,7 +3,6 @@ using System.Collections;
 
 public class ChestOpen : Interactable
 {
-    public static ChestOpen Instance;
     // I used a static so that my ChestOpen can be accessed from other scripts.
 
     public GameObject chestui;
@@ -64,8 +63,11 @@ public class ChestOpen : Interactable
 
     public void DamageBuff()
     {
-        StartCoroutine(DamageTime());
-        CloseChest();
+        if (!isOpen)
+        {
+            StartCoroutine(DamageTime());
+            CloseChest();
+        }
     }
 
     public void HealthBuff()
@@ -114,12 +116,4 @@ public class ChestOpen : Interactable
         PlayerStats.Instance.healthBar.SetSlider(PlayerStats.Instance.currentHealth); // Updates the currenthealth variable from the playerstats script
     }
 
-   // private void Awake()
-    //{
-        //if(Instance == null)
-        //Instance = this;
-        //else
-        //Destroy(gameObject); // Destroys the gameobject
-        // Makes it so that there can't be more than one StatManager in my game.
-   // }
 }

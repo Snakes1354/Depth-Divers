@@ -381,10 +381,10 @@ MonoBehaviour:
   MaxHealth: 10
   ExpAmount: 10
   DropChance: 0.1
-  Chest: {fileID: 0}
-  agent: {fileID: 0}
-  animator: {fileID: 0}
-  player: {fileID: 0}
+  Chest: {fileID: 8944407244225242513}
+  agent: {fileID: 19244761}
+  animator: {fileID: 19244764}
+  player: {fileID: 57097455498796451}
 --- !u!95 &19244764
 Animator:
   serializedVersion: 7
@@ -1791,10 +1791,10 @@ MonoBehaviour:
   MaxHealth: 50
   ExpAmount: 50
   DropChance: 0.1
-  Chest: {fileID: 0}
-  agent: {fileID: 0}
-  animator: {fileID: 0}
-  player: {fileID: 0}
+  Chest: {fileID: 8944407244225242513}
+  agent: {fileID: 103059082}
+  animator: {fileID: 103059085}
+  player: {fileID: 57097455498796451}
 --- !u!95 &103059085
 Animator:
   serializedVersion: 7
@@ -2645,10 +2645,10 @@ MonoBehaviour:
   MaxHealth: 10
   ExpAmount: 10
   DropChance: 0.1
-  Chest: {fileID: 0}
-  agent: {fileID: 0}
-  animator: {fileID: 0}
-  player: {fileID: 0}
+  Chest: {fileID: 8944407244225242513}
+  agent: {fileID: 158540654}
+  animator: {fileID: 158540657}
+  player: {fileID: 57097455498796451}
 --- !u!95 &158540657
 Animator:
   serializedVersion: 7
@@ -4855,8 +4855,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.094634615, y: 0.080004804, z: 0.53630143}
-  m_Center: {x: 0.0114894435, y: 0.025205769, z: -0.23167695}
+  m_Size: {x: 0.094634615, y: 0.15560412, z: 0.9946114}
+  m_Center: {x: 0.011487905, y: 0.009797092, z: -0.46090716}
 --- !u!114 &367848465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4869,7 +4869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec5b846dd4c23524b98cd202c4cd9d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponDamage: 10
+  weaponDamage: 15
 --- !u!1 &369431405
 GameObject:
   m_ObjectHideFlags: 0
@@ -6078,12 +6078,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.094634615, y: 0.080004804, z: 0.53630143}
-  m_Center: {x: 0.0114894435, y: 0.025205769, z: -0.23167695}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &446572003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7693,11 +7693,11 @@ MonoBehaviour:
   CurrentHealth: 500
   MaxHealth: 500
   ExpAmount: 500
-  DropChance: 0.1
-  Chest: {fileID: 0}
-  agent: {fileID: 0}
-  animator: {fileID: 0}
-  player: {fileID: 0}
+  DropChance: 0.3
+  Chest: {fileID: 8944407244225242513}
+  agent: {fileID: 582225560}
+  animator: {fileID: 582225563}
+  player: {fileID: 57097455498796451}
 --- !u!95 &582225563
 Animator:
   serializedVersion: 7
@@ -13297,10 +13297,10 @@ MonoBehaviour:
   MaxHealth: 10
   ExpAmount: 10
   DropChance: 0.1
-  Chest: {fileID: 0}
-  agent: {fileID: 0}
-  animator: {fileID: 0}
-  player: {fileID: 0}
+  Chest: {fileID: 8944407244225242513}
+  agent: {fileID: 1140052251}
+  animator: {fileID: 1140052254}
+  player: {fileID: 57097455498796451}
 --- !u!95 &1140052254
 Animator:
   serializedVersion: 7
@@ -15119,7 +15119,7 @@ MonoBehaviour:
   CurrentHealth: 5
   MaxHealth: 5
   ExpAmount: 5
-  DropChance: 1
+  DropChance: 0.1
   Chest: {fileID: 8944407244225242513}
   agent: {fileID: 1277358265}
   animator: {fileID: 1277358268}
@@ -17420,10 +17420,10 @@ MonoBehaviour:
   MaxHealth: 50
   ExpAmount: 50
   DropChance: 0.1
-  Chest: {fileID: 0}
-  agent: {fileID: 0}
-  animator: {fileID: 0}
-  player: {fileID: 0}
+  Chest: {fileID: 8944407244225242513}
+  agent: {fileID: 1418154989}
+  animator: {fileID: 1418154992}
+  player: {fileID: 57097455498796451}
 --- !u!95 &1418154992
 Animator:
   serializedVersion: 7
@@ -17887,10 +17887,10 @@ MonoBehaviour:
   MaxHealth: 10
   ExpAmount: 10
   DropChance: 0.1
-  Chest: {fileID: 0}
-  agent: {fileID: 0}
-  animator: {fileID: 0}
-  player: {fileID: 0}
+  Chest: {fileID: 8944407244225242513}
+  agent: {fileID: 1466596404}
+  animator: {fileID: 1466596407}
+  player: {fileID: 57097455498796451}
 --- !u!95 &1466596407
 Animator:
   serializedVersion: 7
@@ -18757,6 +18757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AmountStats: {fileID: 1590985577}
+  ChestOpen: {fileID: 4338669778511800350}
 --- !u!1 &1515955678
 GameObject:
   m_ObjectHideFlags: 0
@@ -19479,10 +19480,10 @@ MonoBehaviour:
   MaxHealth: 10
   ExpAmount: 10
   DropChance: 0.1
-  Chest: {fileID: 0}
-  agent: {fileID: 0}
-  animator: {fileID: 0}
-  player: {fileID: 0}
+  Chest: {fileID: 8944407244225242513}
+  agent: {fileID: 1574723100}
+  animator: {fileID: 1574723103}
+  player: {fileID: 57097455498796451}
 --- !u!95 &1574723103
 Animator:
   serializedVersion: 7
@@ -22942,10 +22943,10 @@ MonoBehaviour:
   MaxHealth: 10
   ExpAmount: 10
   DropChance: 0.1
-  Chest: {fileID: 0}
-  agent: {fileID: 0}
-  animator: {fileID: 0}
-  player: {fileID: 0}
+  Chest: {fileID: 8944407244225242513}
+  agent: {fileID: 1818734520}
+  animator: {fileID: 1818734523}
+  player: {fileID: 57097455498796451}
 --- !u!95 &1818734523
 Animator:
   serializedVersion: 7
@@ -52994,10 +52995,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.2519406
-  m_Height: 4.6170588
+  m_Radius: 1.1454958
+  m_Height: 5.299154
   m_Direction: 1
-  m_Center: {x: 0.23097128, y: 2.3964856, z: 0.52096915}
+  m_Center: {x: 0.23097128, y: 2.7375343, z: -0.21244347}
 --- !u!114 &8505018791398307643
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class Actor : MonoBehaviour
     [SerializeField] private int CurrentHealth = 2;
     [SerializeField] private int MaxHealth = 3;
     [SerializeField] private int ExpAmount;
-    public float DropChance = 1;
+    public float DropChance = 0.1f;
 
     private float timePassed;
     private float newDestinationCD = 0.5f;
