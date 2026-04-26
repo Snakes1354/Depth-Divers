@@ -6,13 +6,13 @@ public class EnemyDamageDealer : MonoBehaviour
 
     float nextHitTime;
 
-   void OnTriggerEnter(Collider collision)
+   void OnTriggerStay(Collider collision)
     {
         if (!collision.CompareTag("Player")) return;
 
         if (Time.time < nextHitTime) return;
 
-        nextHitTime = Time.time + 2f; 
+        nextHitTime = Time.time + 1f; 
         PlayerStats.Instance.TakeDamage(weaponDamage);
     }
 }

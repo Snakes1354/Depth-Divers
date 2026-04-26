@@ -35,7 +35,7 @@ public class Dialogue : MonoBehaviour
             }
         }
 
-        if (ActivePrompt = true && Input.GetKeyDown(KeyCode.X))
+        if (ActivePrompt == true && Input.GetKeyDown(KeyCode.X))
         {
             Destroy(prompt);
             ActivePrompt = false;

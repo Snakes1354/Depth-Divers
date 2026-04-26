@@ -6,35 +6,52 @@ using TMPro;
 public class StatsUI : MonoBehaviour
 {
 
-    public GameObject[] statsSlots; // Makes it so you have to assign a gameobject in the inspector
-    public CanvasGroup statsCanvas; // Makes it so you have to assign a canvas in the inspector
+  public CanvasGroup chestCanvas;
+  public GameObject[] statsSlots; // Makes it so you have to assign a gameobject in the inspector
+  public CanvasGroup statsCanvas; // Makes it so you have to assign a canvas in the inspector
 
-    // VARIABLES
-    private bool statsOpen = false;
-    public static int Points;
+  // VARIABLES
+  private bool statsOpen = false;
+  public static int Points;
 
     private void Update()
     {
-        if(Input.GetButtonDown("ToggleStats")) // Makes it so when you press a curtain button it opens togglestats
+      if(Input.GetButtonDown("ToggleStats")) // Makes it so when you press a curtain button it opens togglestats
+      {
         if(statsOpen) // This if statement only works if statsopen bool is true
-        {
+          {
             Cursor.visible = false; // Sets my cursor visiblity to false
             Cursor.lockState = CursorLockMode.Locked; // This locks my cursor
             Time.timeScale = 1; // Pauses the time in the game
             statsCanvas.alpha = 0; // Makes the canvas invisible
+
+            if (chestCanvas != null)
+            {
+              chestCanvas.blocksRaycasts = true;
+              chestCanvas.interactable = true;
+            }
+
             statsOpen = false; // Sets the statsopen bool to false
-        }
-        else
-        {
+
+          }
+          else
+          {
             Cursor.visible = true; // Sets my cursor visiblity to true
             Cursor.lockState = CursorLockMode.None; // This Unlocks my cursor
             Time.timeScale = 0; // This unpauses the time in the game
             statsCanvas.alpha = 1; // Makes the canvas seeable
+
+            if (chestCanvas != null)
+            {
+              chestCanvas.blocksRaycasts = false;
+              chestCanvas.interactable = false;
+            }
+
             statsOpen = true; // Sets the statsopen bool to true
-        }
-
-        UpdateAllStats(); // Calls updateallstats method
-
+          }
+      }
+      UpdateAllStats(); // Calls updateallstats method
+      
     }
 
    public void UpdateDamage()

@@ -11,8 +11,8 @@ public class KillManager : MonoBehaviour
 
     public static void PrintEnemyCount()
     {
-        Debug.Log($"Enemies defeated: {TotalEnemiesDefeated}");
         TotalEnemiesDefeated++;
+        Debug.Log($"Enemies defeated: {TotalEnemiesDefeated}");
     }
 
     private void Update()

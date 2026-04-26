@@ -39,7 +39,6 @@ public class Actor : MonoBehaviour
         {
             if (Vector3.Distance(player.transform.position, transform.position) <= aggroRange)
             {
-                transform.LookAt(player.transform.position); // Looks at the player
                 animator.SetTrigger("attack"); // Changes the animaton to attack
                 timePassed = 0;
             }
@@ -85,7 +84,7 @@ public class Actor : MonoBehaviour
 
             if (Physics.Raycast(transform.position + Vector3.up * 2f, Vector3.down, out hit, 10f))
             {
-                GameObject newchest = Instantiate(Chest, hit.point + Vector3.down * 0.7f, Quaternion.identity);
+                GameObject newchest = Instantiate(Chest, hit.point + Vector3.down * 1f, Quaternion.identity);
                 newchest.SetActive(true);
             }
             else
