@@ -11,6 +11,7 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
     public GameObject prompt;
     private bool ActivePrompt = true;
+    private Coroutine typingCoroutine;
 
     private int index;
     
@@ -30,7 +31,12 @@ public class Dialogue : MonoBehaviour
             }
             else
             {
-                StopAllCoroutines();
+                if (typingCoroutine != null)
+
+                {
+                    StopCoroutine(typingCoroutine);
+                    typingCoroutine = null;
+                }
                 textComponent.text = lines[index];
             }
         }
@@ -45,7 +51,7 @@ public class Dialogue : MonoBehaviour
     public void StartDiagloue()
     {
         index = 0;
-        StartCoroutine(TypeLine());
+        typingCoroutine = StartCoroutine(TypeLine());
     }
 
     IEnumerator TypeLine()
@@ -63,7 +69,7 @@ public class Dialogue : MonoBehaviour
         {
             index++;
             textComponent.text = string.Empty;
-            StartCoroutine(TypeLine());
+            typingCoroutine = StartCoroutine(TypeLine());
         }
         else
         {

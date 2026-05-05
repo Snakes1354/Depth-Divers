@@ -23,12 +23,15 @@ public class Actor : MonoBehaviour
     public NavMeshAgent agent;
     public Animator animator;
     public GameObject player;
+    public FloatingHealthBar healthBar;
+    
 
     private void Start()
     {
         animator = GetComponent<Animator>(); // Finds where the animator component is
         agent = GetComponent<NavMeshAgent>(); // Finds where the agent component is
         player = GameObject.FindWithTag("Player"); // Find where the gameobject player with the tag player is
+        healthBar.UpdateHealthBar(CurrentHealth, MaxHealth); // Updates the health bar at the start
     }
 
     private void Update()
@@ -59,12 +62,16 @@ public class Actor : MonoBehaviour
     {
         CurrentHealth = MaxHealth;
         // Sets hp at the start.
+
+        healthBar = GetComponentInChildren<FloatingHealthBar>(); // Finds the health bar script
     }
 
     public void TakeDamage(int amount)
     {
         CurrentHealth -= amount;
         // Makes it take damage.
+
+        healthBar.UpdateHealthBar(CurrentHealth, MaxHealth);
 
         if(CurrentHealth <= 0)
         {

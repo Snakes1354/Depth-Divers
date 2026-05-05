@@ -73,11 +73,12 @@ public class ChestOpen : Interactable
     private IEnumerator SpeedTime()
     {
         initialSpeed = StatManager.Instance.MovementSpeed;
-
+        Debug.Log("SpeedStarted");
         StatManager.Instance.MovementSpeed *= 2f;
 
-        yield return new WaitForSecondsRealtime(60f);
-
+        yield return new WaitForSecondsRealtime(2f);
+        
+        Debug.Log("SpeedEnded");
         StatManager.Instance.MovementSpeed = initialSpeed;
     }
 
